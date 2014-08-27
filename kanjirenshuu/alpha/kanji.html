@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>漢字の練習 - Kanji no Renshuu</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/foundation.kanji.min.css"/>
+    <link rel="stylesheet" href="css/kanji.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+    <div id="appWindow">
+      <ul class="tabs row" data-tab>
+        <li class="tab-title active font small-6 medium-3 columns"><a href="#panel2-1" class="text-center">Load Kanji</a></li>
+        <li class="tab-title small-6 medium-3 columns"><a href="#panel2-2" class="text-center">Edit Kanji</a></li>
+        <li class="tab-title small-6 medium-3 columns"><a id="flashCards" href="#panel2-3" class="text-center">Flashcards</a></li>
+        <li class="tab-title small-6 medium-3 columns"><a id="quiz" href="#panel2-4" class="text-center">Quiz</a></li>
+      </ul>
+      <div class="tabs-content">
+        <div class="content active" id="panel2-1">
+          <h2 class="text-center">Welcome to Kanji no Renshuu!</h2>
+          <h2 class="separator"></h2>
+          <p id="text">
+            This web app will allow you to expand and test your knowledge of kanji readings.
+            To begin, create a new text file in a simple text editor such as TextPad (Windows) or TextEdit (Mac).
+            Next, type the kanji you wish to learn along with its reading in hiragana and in romaji, separated by space or tab,
+            one set per line.
+            Here's an example:
+          </p>
+          <p>面接　めんせつ　mensetsu
+          <br>成績　せいせき　seiseki
+          <br>性格　せいかく　seikaku
+          </p>
+          <p>
+            Save the file in UTF-8 .txt format. That's it. Go to the next page to upload your file. Once you've done that,
+            you can pratice flashcards and take quizes to your hearts content!
+          </p>
+        </div>
+        <div class="content" id="panel2-2">
+          <div class="row">
+            <textarea id="kanjiList" class="small-8 columns" rows="25"></textarea>
+            <div class="small-4 columns">
+              <a><div id="clearButton">Clear Kanji</div></a>
+              <form id="form">
+                <input type="file" id="fileChooser" accept="text/plain" multiple="multiple"/>
+              </form>
+              <ul id="fileList">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content" id="panel2-3">
+          <div class="flashCard">
+            <div class="cardFront"><h1 class="kanjiLabel"></h1></div>
+            <div class="cardBack"><h1 class="kanjiLabel"></h1></div>
+          </div>
+        </div>
+        <div class="content" id="panel2-4">
+          <div class="flashCard" id="quizCard">
+            <div class="cardFront" id="quizFront"><h1 class="kanjiLabel"></h1></div>
+            <div class="cardBack" id="quizBack"><h1 class="kanjiLabel"></h1></div>
+          </div>
+          <form id="answerForm">
+            <div class="row">
+              <div class="small-7 medium-9 columns">
+              </div>
+              <div class="small-5 medium-3 columns inline text-center">
+                <p class="inline" style="font-size:1.25rem"><span id="numCorrect">0</span>/<span id="numAnswered">0</span> Correct</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-7 medium-9 columns">
+                <input id="answerField" type="text" placeholder="Your answer goes here." onkeypress="return onKeyDown(event);">
+              </div>
+              <a class="small-5 medium-3 columns inline text-center">
+                <p id="submitButton" class="inline">Submit</p>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.tabs.js"></script>
+    <script src="js/kanji.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
