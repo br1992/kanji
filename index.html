@@ -44,10 +44,13 @@
         </div>
         <div class="content" id="panel2-2">
           <div class="row">
-            <textarea id="kanjiList" class="small-8 columns" rows="25"></textarea>
-            <div class="small-4 columns">
+            <textarea id="kanjiList" class="small-7 medium-8 columns" rows="25"></textarea>
+            <div class="small-5 medium-4 columns">
               <a><div id="clearButton">Clear Kanji</div></a>
               <form id="form">
+                <select name="Kanji Lists" multiple>
+                  <option value="0">Kanji1</option>
+                </select>
                 <input type="file" id="fileChooser" accept="text/plain" multiple="multiple"/>
               </form>
               <ul id="fileList">
@@ -88,7 +91,7 @@
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/foundation.tabs.js"></script>
-    <script src="js/kanji.min.js"></script>
+    <script src="js/kanji.js"></script>
     <script>
       $(document).foundation();
     </script>
