@@ -1,5 +1,4 @@
 kanjirenshuu
 ============
 
-A light website for practicing Japanese reading of Kanji
-Live at http://br1992.github.io/kanji/
+A light website for practicing Japanese reading of Kanji: http://br1992.github.io/kanji/
